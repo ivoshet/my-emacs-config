@@ -1,0 +1,4 @@
+#all files
+*
+!.gitignore
+!.init.el
