@@ -168,7 +168,7 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-window-fixed-size nil)
-(setq neo-window-width 40)
+(setq neo-window-width 45)
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
 
