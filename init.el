@@ -167,7 +167,7 @@
 (add-to-list 'load-path "/home/ivo/.emacs.d/elpa/neotree-0.5.2")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
-;;(setq neo-window-fixed-size t)
+(setq neo-window-fixed-size nil)
 (setq neo-window-width 40)
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
