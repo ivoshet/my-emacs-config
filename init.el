@@ -167,7 +167,7 @@
 (add-to-list 'load-path "/home/ivo/.emacs.d/elpa/neotree-0.5.2")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
-;;(setq neo-window-fixed-size nil)
+;;(setq neo-window-fixed-size t)
 (setq neo-window-width 40)
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
@@ -188,7 +188,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
+    (rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
