@@ -153,6 +153,8 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(setq web-mode-enable-current-element-highlight t)
+
 (defun web-mode-element-close-and-indent ()
   (interactive)
   (web-mode-element-close)
@@ -188,7 +190,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
+    (edbi-sqlite rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
