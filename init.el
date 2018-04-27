@@ -152,6 +152,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
 (setq web-mode-enable-current-element-highlight t)
 
@@ -173,6 +174,8 @@
 (setq neo-window-width 45)
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
+
+
 
 ;;fill column indicator
 (add-to-list 'load-path "/home/ivo/.emacs.d/elpa/fill-column-indicator-1.90")
