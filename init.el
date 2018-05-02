@@ -155,6 +155,11 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
 
+(require 'yaml-mode)
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+
+
 (setq web-mode-enable-current-element-highlight t)
 
 (defun web-mode-element-close-and-indent ()
@@ -192,9 +197,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
+ '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (edbi-sqlite rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
+    (yaml-mode rjsx-mode coffee-mode edbi-sqlite rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -202,3 +209,12 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'set-goal-column 'disabled nil)
+
+;;coffee-mode
+
+
+(eval-after-load "coffee-mode"
+  '(progn
+     (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+     (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
+
