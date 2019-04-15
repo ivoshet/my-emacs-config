@@ -18,8 +18,9 @@
 
 (load "package")
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
+(setq package-archives '(
+
+("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (add-to-list 'package-archives
@@ -37,8 +38,6 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 
 (setq inhibit-splash-screen   t)
 (setq ingibit-startup-message t) ;; экран приветствия можно вызвать комбинацией C-h C-a
@@ -81,13 +80,14 @@
 			    (?\" . ?\")
 			    (?\{ . ?\})
 			    (?\'.?\')
-			    ) )
+
+			    )) 
 
 ;; Delete selection
 (delete-selection-mode t)
 
 ;;внешний вид
-;; внешний вид
+
 (tooltip-mode      -1)
 (menu-bar-mode     -1) ;; отключаем графическое меню
 (tool-bar-mode     -1) ;; отключаем tool-bar
@@ -153,14 +153,25 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-(require 'yaml-mode)
-    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+;;disabel underlining in react native files
+(setq js2-strict-missing-semi-warning nil)
+;;(setq js2-mode-show-parse-errors nil)
+;;(setq js2-mode-show-strict-warnings nil)
+
+;;(require 'yaml-mode)
+;;    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 
+;;show indent
+(indent-guide-global-mode)
+(setq highlight-indent-guides-method 'character)
 
 (setq web-mode-enable-current-element-highlight t)
+
 
 (defun web-mode-element-close-and-indent ()
   (interactive)
@@ -171,17 +182,6 @@
 
 (setq web-mode-auto-close-style 2)
 (setq web-mode-tag-auto-close-style 2)
-
-;;neotree
-(add-to-list 'load-path "/home/ivo/.emacs.d/elpa/neotree-0.5.2")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-window-fixed-size nil)
-(setq neo-window-width 45)
-(add-hook 'after-init-hook #'neotree-toggle)
-(setq neo-autorefresh nil)
-
-
 
 ;;fill column indicator
 (add-to-list 'load-path "/home/ivo/.emacs.d/elpa/fill-column-indicator-1.90")
@@ -199,9 +199,12 @@
  ;; If there is more than one, they won't work right.
  '(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("5f27195e3f4b85ac50c1e2fac080f0dd6535440891c54fcfa62cdcefedf56b1b" default)))
  '(package-selected-packages
    (quote
-    (yaml-mode rjsx-mode coffee-mode edbi-sqlite rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode neotree))))
+    (flymake-hlint neotree editorconfig monokai-theme rainbow-identifiers eslint-fix js2-mode jsx-mode typescript-mode python-mode format-all django-mode django-theme indent-guide coffee-mode rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -209,12 +212,19 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'set-goal-column 'disabled nil)
+;;monokai
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-3.5.3/")
+;; (setq monokai-theme-kit t)
+;; (load-theme 'monokai t)
+;;M-x load-theme RET monokai
 
-;;coffee-mode
+;;neotree
+(add-to-list 'load-path "/home/ivo/.emacs.d/elpa/neotree-0.5.2")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-window-fixed-size nil)
+(setq neo-window-width 45)
+(add-hook 'after-init-hook #'neotree-toggle)
+(setq neo-autorefresh nil)
 
-
-(eval-after-load "coffee-mode"
-  '(progn
-     (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
-     (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
 
