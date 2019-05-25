@@ -221,7 +221,9 @@
 (setq neo-autorefresh nil)
 
 ;;change color of variable
-(set-foreground-color "chartreuse")
+;;(set-foreground-color "chartreuse")
+(set-foreground-color "SeaGreen3")
+;;lime green
 
 ;;vere useful plugin, highlighte brackets
 (require 'rainbow-delimiters)
