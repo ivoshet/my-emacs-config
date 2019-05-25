@@ -221,9 +221,12 @@
 (setq neo-autorefresh nil)
 
 ;;change color of variable
-(set-foreground-color "spring green")
+(set-foreground-color "chartreuse")
 
 ;;vere useful plugin, highlighte brackets
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+
+
 
