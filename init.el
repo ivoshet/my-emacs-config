@@ -221,12 +221,29 @@
 (setq neo-autorefresh nil)
 
 ;;change color of variable
-;;(set-foreground-color "chartreuse")
+(set-foreground-color "chartreuse")
 
 ;;vere useful plugin, highlighte brackets
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; rainbow-delimiters-mode setup, with decreasing bracket size
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
 
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "cyan"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "white"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "yellow"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "magenta"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "blue"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "violet"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "purple"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "gold"))))
+ '(rainbow-delimiters-unmatched-face ((t (:background "cyan"))))
+
+ )
 
 
