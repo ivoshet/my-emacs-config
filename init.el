@@ -157,13 +157,6 @@
 (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
 ;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-;;disabel underlining in react native files
-(setq js2-strict-missing-semi-warning nil)
-;;(setq js2-mode-show-parse-errors nil)
-;;(setq js2-mode-show-strict-warnings nil)
-
-;;(require 'yaml-mode)
-;;    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 
 ;;show indent
@@ -227,4 +220,10 @@
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
 
+;;change color of variable
+(set-foreground-color "spring green")
+
+;;vere useful plugin, highlighte brackets
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
