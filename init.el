@@ -220,6 +220,7 @@
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
 
+;;M-x list-color-display command for showing color list
 ;;change color of variable
 ;;(set-foreground-color "chartreuse")
 (set-foreground-color "SeaGreen3")
@@ -247,5 +248,6 @@
  '(rainbow-delimiters-unmatched-face ((t (:background "cyan"))))
 
  )
-
+ ;;change comment color
+ (set-face-foreground 'font-lock-comment-face "dim gray")
 
