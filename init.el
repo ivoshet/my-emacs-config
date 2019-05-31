@@ -158,6 +158,7 @@
 (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 
 
 
