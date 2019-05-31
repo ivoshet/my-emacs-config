@@ -102,6 +102,7 @@
 
 ;;настройка фона
 (set-background-color "gray10") 
+
 ;;настройка шрифта 
 (set-foreground-color "white")
 ;;цвет курсора
@@ -155,6 +156,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 
@@ -185,26 +187,7 @@
 (fci-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(coffee-args-compile (quote ("-c" "--no-header" "--bare")))
- '(coffee-tab-width 2)
- '(custom-safe-themes
-   (quote
-    ("5f27195e3f4b85ac50c1e2fac080f0dd6535440891c54fcfa62cdcefedf56b1b" default)))
- '(package-selected-packages
-   (quote
-    (flymake-hlint neotree editorconfig monokai-theme rainbow-identifiers eslint-fix js2-mode jsx-mode typescript-mode python-mode format-all django-mode django-theme indent-guide coffee-mode rainbow-mode dired-sidebar project-explorer fill-column-indicator web-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(put 'set-goal-column 'disabled nil)
+;;(put 'set-goal-column 'disabled nil)
 ;;monokai
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-3.5.3/")
 ;; (setq monokai-theme-kit t)
@@ -215,16 +198,16 @@
 (add-to-list 'load-path "/home/ivo/.emacs.d/elpa/neotree-0.5.2")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
-(setq neo-window-fixed-size nil)
+;;(setq neo-window-fixed-size nil)
 (setq neo-window-width 45)
 (add-hook 'after-init-hook #'neotree-toggle)
 (setq neo-autorefresh nil)
+
 
 ;;M-x list-color-display command for showing color list
 ;;change color of variable
 ;;(set-foreground-color "chartreuse")
 (set-foreground-color "SeaGreen3")
-;;lime green
 
 ;;vere useful plugin, highlighte brackets
 (require 'rainbow-delimiters)
